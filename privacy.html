@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | PermitFlow SA</title>
+  <meta name="description" content="Privacy Policy for PermitFlow SA — how we collect, use, and protect your personal information in compliance with POPIA." />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --navy: #0D2545;
+      --navy-mid: #1A3A6B;
+      --gold: #C9A84C;
+      --text: #1a1a2e;
+      --text-light: #4a5568;
+      --bg: #f8f9fc;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); }
+
+    .site-header { background: var(--navy); padding: 0 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff; font-weight: 700; }
+    .nav-logo-sa { color: var(--gold); }
+    .nav-back { color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+    .nav-back:hover { opacity: 0.75; }
+
+    .disclaimer-banner { background: #fff8e7; border-bottom: 2px solid var(--gold); padding: 10px 24px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; color: #5a4a1a; line-height: 1.5; }
+    .disclaimer-banner p { margin: 0; }
+    .disclaimer-banner strong { color: #3a2e00; }
+
+    .page-hero { background: var(--navy); padding: 60px 24px 50px; text-align: center; }
+    .page-hero-eyebrow { color: var(--gold); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 14px; }
+    .page-hero-meta { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+
+    .legal-wrap { max-width: 820px; margin: 0 auto; padding: 60px 24px 80px; }
+    .legal-toc { background: var(--white); border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 28px; margin-bottom: 48px; }
+    .legal-toc h3 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 14px; color: var(--navy); }
+    .legal-toc ol { padding-left: 20px; }
+    .legal-toc li { margin-bottom: 6px; }
+    .legal-toc a { color: var(--navy-mid); font-size: 0.88rem; text-decoration: none; }
+    .legal-toc a:hover { color: var(--gold); text-decoration: underline; }
+
+    .legal-section { margin-bottom: 44px; }
+    .legal-section h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); display: inline-block; }
+    .legal-section p { color: var(--text-light); line-height: 1.8; margin-bottom: 14px; font-size: 0.95rem; }
+    .legal-section ul { color: var(--text-light); line-height: 1.8; margin-bottom: 14px; padding-left: 22px; font-size: 0.95rem; }
+    .legal-section li { margin-bottom: 8px; }
+    .legal-section strong { color: var(--text); }
+
+    .highlight-box { background: #f0f4ff; border-left: 4px solid var(--navy-mid); padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 20px 0; }
+    .highlight-box p { margin: 0; font-size: 0.9rem; color: #2a3a5a; }
+
+    .popia-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: var(--gold); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; padding: 6px 14px; border-radius: 20px; margin-bottom: 28px; border: 1px solid rgba(201,168,76,0.3); }
+
+    .site-footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 32px 24px; font-size: 0.8rem; text-align: center; }
+    .site-footer a { color: var(--gold); text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+    .footer-legal-links { margin-top: 10px; display: flex; gap: 12px; justify-content: center; align-items: center; }
+    .footer-legal-links span { color: rgba(255,255,255,0.25); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="36" height="36" rx="7" fill="#1A3A6B" stroke="#C9A84C" stroke-width="1.8"/>
+          <rect x="7" y="10" width="14" height="3" rx="1.5" fill="#C9A84C"/>
+          <rect x="7" y="16" width="9" height="3" rx="1.5" fill="#C9A84C" opacity=".7"/>
+          <rect x="7" y="22" width="11" height="3" rx="1.5" fill="#C9A84C" opacity=".5"/>
+          <circle cx="27" cy="26" r="6" fill="#0D2545" stroke="#C9A84C" stroke-width="1.8"/>
+          <path d="M24 26l2.5 2.5 4.5-4.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav-logo-text">PermitFlow <span class="nav-logo-sa">SA</span></span>
+      </a>
+      <a href="index.html" class="nav-back">← Back to Home</a>
+    </nav>
+  </header>
+
+  <div class="disclaimer-banner">
+    <p><strong>PermitFlow SA is a private B2B consulting agency, not a government entity.</strong> We are not affiliated with any municipality, state department, or government body.</p>
+  </div>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="page-hero-meta">Effective date: 1 January 2026 &nbsp;·&nbsp; Last updated: May 2026</p>
+  </div>
+
+  <div class="legal-wrap">
+
+    <div class="popia-badge">🔒 POPIA Compliant — Protection of Personal Information Act 4 of 2013</div>
+
+    <div class="legal-toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#what-we-collect">Information We Collect</a></li>
+        <li><a href="#how-we-use">How We Use Your Information</a></li>
+        <li><a href="#sharing">Sharing of Information</a></li>
+        <li><a href="#retention">Data Retention</a></li>
+        <li><a href="#security">Data Security</a></li>
+        <li><a href="#your-rights">Your Rights Under POPIA</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#contact">Contact & Complaints</a></li>
+      </ol>
+    </div>
+
+    <div class="legal-section" id="who-we-are">
+      <h2>1. Who We Are</h2>
+      <p><strong>PermitFlow SA (Pty) Ltd</strong> (Reg No: 2026/352999/07) is the responsible party (as defined under POPIA) for personal information collected through this website and in the course of providing our services.</p>
+      <div class="highlight-box">
+        <p><strong>PermitFlow SA is a private B2B consulting firm.</strong> We are not a government entity, municipality, or state department. We do not represent or act on behalf of any public authority in the collection of personal data.</p>
+      </div>
+      <p>This Privacy Policy explains how we collect, use, store, and protect your personal information in compliance with the Protection of Personal Information Act 4 of 2013 (POPIA).</p>
+    </div>
+
+    <div class="legal-section" id="what-we-collect">
+      <h2>2. Information We Collect</h2>
+      <p>We may collect the following categories of personal information:</p>
+      <ul>
+        <li><strong>Contact details:</strong> Full name, email address, phone number, company name</li>
+        <li><strong>Project information:</strong> Project location, permit type, project timeline, and related technical details you share with us</li>
+        <li><strong>Business information:</strong> Company registration details, VAT numbers (where required for invoicing)</li>
+        <li><strong>Communication records:</strong> Emails, enquiry form submissions, and other correspondence</li>
+        <li><strong>Website usage data:</strong> IP address, browser type, pages visited, and session duration (collected via cookies and analytics tools)</li>
+      </ul>
+      <p>We do not collect sensitive personal information (as defined under POPIA) unless absolutely necessary and with your explicit consent.</p>
+    </div>
+
+    <div class="legal-section" id="how-we-use">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use your personal information for the following legitimate purposes:</p>
+      <ul>
+        <li>Responding to enquiries and providing quotes for our consulting services</li>
+        <li>Preparing and submitting permit applications on your behalf (as per your service agreement)</li>
+        <li>Communicating project status updates and requesting required documentation</li>
+        <li>Issuing invoices and processing payments</li>
+        <li>Complying with legal and regulatory obligations</li>
+        <li>Improving our website and services through anonymised analytics</li>
+        <li>Sending occasional relevant service updates (you may opt out at any time)</li>
+      </ul>
+      <p>We will not use your personal information for any purpose incompatible with the above without your prior consent.</p>
+    </div>
+
+    <div class="legal-section" id="sharing">
+      <h2>4. Sharing of Information</h2>
+      <p>We share your personal information only where necessary:</p>
+      <ul>
+        <li><strong>Government authorities and municipalities:</strong> Your project details and contact information are shared with the relevant authority as part of the permit application process — this is the core purpose of our service and you consent to this when engaging us</li>
+        <li><strong>Service providers:</strong> We use third-party tools such as Formspree (contact forms) and Airtable (project management) — these providers are bound by their own privacy policies and GDPR/POPIA-compliant data processing terms</li>
+        <li><strong>Legal compliance:</strong> We may disclose information where required by law, court order, or regulatory authority</li>
+      </ul>
+      <p>We do not sell, rent, or trade your personal information to any third party for marketing purposes.</p>
+    </div>
+
+    <div class="legal-section" id="retention">
+      <h2>5. Data Retention</h2>
+      <p>We retain personal information for as long as necessary to fulfil the purposes for which it was collected, and in accordance with applicable legal requirements:</p>
+      <ul>
+        <li><strong>Client records and project documentation:</strong> 5 years from project completion (in line with standard South African business record-keeping requirements)</li>
+        <li><strong>Enquiry and contact form data:</strong> 12 months if no engagement results</li>
+        <li><strong>Financial records:</strong> 5 years as required by South African tax law</li>
+        <li><strong>Website analytics:</strong> Anonymised, retained for up to 26 months</li>
+      </ul>
+      <p>After the applicable retention period, personal information is securely deleted or anonymised.</p>
+    </div>
+
+    <div class="legal-section" id="security">
+      <h2>6. Data Security</h2>
+      <p>We take reasonable technical and organisational measures to protect your personal information against unauthorised access, loss, alteration, or destruction. These measures include:</p>
+      <ul>
+        <li>Secure HTTPS encryption on our website</li>
+        <li>Access controls limiting who within our team can view client data</li>
+        <li>Use of reputable, security-certified third-party platforms for data storage</li>
+      </ul>
+      <p>While we take security seriously, no method of electronic transmission or storage is 100% secure. In the event of a data breach that poses a risk to your rights, we will notify you and the Information Regulator as required under POPIA.</p>
+    </div>
+
+    <div class="legal-section" id="your-rights">
+      <h2>7. Your Rights Under POPIA</h2>
+      <p>As a data subject under POPIA, you have the right to:</p>
+      <ul>
+        <li><strong>Access:</strong> Request confirmation of whether we hold your personal information and obtain a copy</li>
+        <li><strong>Correction:</strong> Request that inaccurate or incomplete personal information be corrected</li>
+        <li><strong>Deletion:</strong> Request the deletion of your personal information (subject to legal retention obligations)</li>
+        <li><strong>Objection:</strong> Object to the processing of your personal information in certain circumstances</li>
+        <li><strong>Withdraw consent:</strong> Where processing is based on consent, withdraw that consent at any time</li>
+        <li><strong>Complain:</strong> Lodge a complaint with the Information Regulator of South Africa</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:zwelethu@permitflow.co.za" style="color: var(--navy-mid);">zwelethu@permitflow.co.za</a>. We will respond within 30 days.</p>
+    </div>
+
+    <div class="legal-section" id="cookies">
+      <h2>8. Cookies</h2>
+      <p>Our website may use cookies and similar tracking technologies to improve your browsing experience and gather anonymised usage data. Types of cookies we may use:</p>
+      <ul>
+        <li><strong>Essential cookies:</strong> Required for the website to function correctly</li>
+        <li><strong>Analytics cookies:</strong> Anonymised data to help us understand how visitors use our site (e.g. Google Analytics)</li>
+      </ul>
+      <p>You can control cookies through your browser settings. Disabling cookies may affect some website functionality but will not prevent you from accessing our content.</p>
+    </div>
+
+    <div class="legal-section" id="third-party">
+      <h2>9. Third-Party Services</h2>
+      <p>Our website and operations make use of the following third-party services that may process your data:</p>
+      <ul>
+        <li><strong>Formspree</strong> — contact form submission processing (formspree.io)</li>
+        <li><strong>Airtable</strong> — project management and client tracking (airtable.com)</li>
+        <li><strong>Google Fonts</strong> — typography rendering (fonts.googleapis.com)</li>
+        <li><strong>Cloudflare Pages</strong> — website hosting (cloudflare.com)</li>
+      </ul>
+      <p>Each of these providers maintains their own privacy policies. We encourage you to review them. We only use services that offer adequate data protection standards.</p>
+    </div>
+
+    <div class="legal-section" id="contact">
+      <h2>10. Contact & Complaints</h2>
+      <p>For any privacy-related queries, requests, or complaints, please contact our Information Officer:</p>
+      <ul>
+        <li><strong>Company:</strong> PermitFlow SA (Pty) Ltd</li>
+        <li><strong>Registration No:</strong> 2026/352999/07</li>
+        <li><strong>Email:</strong> <a href="mailto:zwelethu@permitflow.co.za" style="color: var(--navy-mid);">zwelethu@permitflow.co.za</a></li>
+        <li><strong>Phone:</strong> 083 403 2674</li>
+        <li><strong>Location:</strong> 3rd Floor, Steven House, Brooklyn Bridge Office Park, 570 Fehrsen Street, Brooklyn, Pretoria, 0181</li>
+      </ul>
+      <p>If you are not satisfied with our response, you have the right to lodge a complaint with the <strong>Information Regulator of South Africa</strong>:</p>
+      <ul>
+        <li>Website: <a href="https://www.justice.gov.za/inforeg/" target="_blank" rel="noopener noreferrer" style="color: var(--navy-mid);">www.justice.gov.za/inforeg</a></li>
+        <li>Email: inforeg@justice.gov.za</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 PermitFlow SA (Pty) Ltd. Reg No: 2026/352999/07. All rights reserved.</p>
+    <p style="margin-top:6px; font-size:0.75rem; color: rgba(255,255,255,0.4);">PermitFlow SA is an independent private consulting firm. Not affiliated with any government entity.</p>
+    <div class="footer-legal-links">
+      <a href="terms.html">Terms of Service</a>
+      <span>·</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <span>·</span>
+      <a href="index.html">Home</a>
+    </div>
+  </footer>
+
+</body>
+</html>
