@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles & Insights | PermitFlow SA</title>
+  <meta name="description" content="Practical insights on wayleave applications, infrastructure permitting, and South Africa's evolving regulatory landscape from the PermitFlow SA team." />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --navy: #0D2545;
+      --navy-mid: #1A3A6B;
+      --gold: #C9A84C;
+      --gold-light: #e8c96a;
+      --text: #1a1a2e;
+      --text-light: #4a5568;
+      --bg: #f8f9fc;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); }
+
+    /* NAV */
+    .site-header { background: var(--navy); padding: 0 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff; font-weight: 700; }
+    .nav-logo-sa { color: var(--gold); }
+    .nav-back { color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+    .nav-back:hover { opacity: 0.75; }
+
+    /* DISCLAIMER */
+    .disclaimer-banner { background: #fff8e7; border-bottom: 2px solid var(--gold); padding: 10px 24px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; color: #5a4a1a; line-height: 1.5; }
+    .disclaimer-banner p { margin: 0; }
+    .disclaimer-banner strong { color: #3a2e00; }
+
+    /* HERO */
+    .page-hero { background: var(--navy); padding: 60px 24px 50px; text-align: center; }
+    .page-hero-eyebrow { color: var(--gold); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 14px; }
+    .page-hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+    /* ARTICLES GRID */
+    .articles-wrap { max-width: 1100px; margin: 0 auto; padding: 60px 24px 80px; }
+
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+
+    .article-card { background: var(--white); border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(13,37,69,0.12); }
+
+    .article-card-tag { background: var(--navy); padding: 10px 20px; display: flex; align-items: center; gap: 8px; }
+    .ac-tag-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .ac-tag-date { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-left: auto; }
+
+    .article-card-body { padding: 24px 24px 20px; flex: 1; display: flex; flex-direction: column; }
+    .article-card-body h2 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .article-card-body p { color: var(--text-light); font-size: 0.9rem; line-height: 1.7; flex: 1; }
+
+    .article-card-footer { padding: 16px 24px; border-top: 1px solid #f0f4f8; display: flex; align-items: center; justify-content: space-between; }
+    .ac-read-time { font-size: 0.78rem; color: var(--text-light); }
+    .ac-link { color: var(--navy-mid); font-size: 0.85rem; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .ac-link:hover { color: var(--gold); }
+    .ac-link svg { transition: transform 0.2s; }
+    .ac-link:hover svg { transform: translateX(3px); }
+
+    /* EMPTY STATE */
+    .articles-empty { text-align: center; padding: 60px 24px; color: var(--text-light); }
+    .articles-empty p { font-size: 0.95rem; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 32px 24px; font-size: 0.8rem; text-align: center; }
+    .site-footer a { color: var(--gold); text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+    .footer-legal-links { margin-top: 10px; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .footer-legal-links span { color: rgba(255,255,255,0.25); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="36" height="36" rx="7" fill="#1A3A6B" stroke="#C9A84C" stroke-width="1.8"/>
+          <rect x="7" y="10" width="14" height="3" rx="1.5" fill="#C9A84C"/>
+          <rect x="7" y="16" width="9" height="3" rx="1.5" fill="#C9A84C" opacity=".7"/>
+          <rect x="7" y="22" width="11" height="3" rx="1.5" fill="#C9A84C" opacity=".5"/>
+          <circle cx="27" cy="26" r="6" fill="#0D2545" stroke="#C9A84C" stroke-width="1.8"/>
+          <path d="M24 26l2.5 2.5 4.5-4.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav-logo-text">PermitFlow <span class="nav-logo-sa">SA</span></span>
+      </a>
+      <a href="index.html" class="nav-back">← Back to Home</a>
+    </nav>
+  </header>
+
+  <div class="disclaimer-banner">
+    <p><strong>PermitFlow SA is a private B2B consulting agency, not a government entity.</strong> We are not affiliated with any municipality, state department, or government body.</p>
+  </div>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Knowledge Base</p>
+    <h1>Articles &amp; Insights</h1>
+    <p class="page-hero-sub">Practical guidance on wayleave applications, infrastructure permitting, and South Africa's evolving regulatory landscape — written by our consulting team.</p>
+  </div>
+
+  <div class="articles-wrap">
+    <div class="articles-grid">
+
+      <!-- ARTICLE CARD: ICASA Rapid Deployment -->
+      <div class="article-card">
+        <div class="article-card-tag">
+          <span class="ac-tag-label">Regulation</span>
+          <span class="ac-tag-date">May 2026</span>
+        </div>
+        <div class="article-card-body">
+          <h2>South Africa's ICASA Rapid Deployment Regulations — What They Mean for Your Projects</h2>
+          <p>South Africa has published its Draft Rapid Deployment Regulations. Here's what's changing around land access, landowner compensation, dispute resolution, and GIS reporting — and what ECNS licensees should be doing now.</p>
+        </div>
+        <div class="article-card-footer">
+          <span class="ac-read-time">5 min read</span>
+          <a href="article-icasa-rapid-deployment.html" class="ac-link">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CARD: What is a wayleave -->
+      <div class="article-card">
+        <div class="article-card-tag">
+          <span class="ac-tag-label">Wayleave Basics</span>
+          <span class="ac-tag-date">May 2026</span>
+        </div>
+        <div class="article-card-body">
+          <h2>What Is a Wayleave Agreement? A Plain-English Guide for Contractors and Developers</h2>
+          <p>A wayleave gives operators the legal right to install infrastructure across land they don't own. Here's what it covers, how it differs from a servitude, who issues them, and when you need one.</p>
+        </div>
+        <div class="article-card-footer">
+          <span class="ac-read-time">8 min read</span>
+          <a href="article-what-is-a-wayleave-agreement.html" class="ac-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CARD: SANRAL requirements -->
+      <div class="article-card">
+        <div class="article-card-tag">
+          <span class="ac-tag-label">SANRAL</span>
+          <span class="ac-tag-date">May 2026</span>
+        </div>
+        <div class="article-card-body">
+          <h2>SANRAL Wayleave Requirements — What to Submit and Why Applications Get Rejected</h2>
+          <p>SANRAL has strict technical requirements. Here's exactly what documents you need, what their reviewers look for, and the most common reasons applications are rejected or delayed.</p>
+        </div>
+        <div class="article-card-footer">
+          <span class="ac-read-time">9 min read</span>
+          <a href="article-sanral-wayleave-requirements.html" class="ac-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CARD: Municipal vs SANRAL vs Eskom -->
+      <div class="article-card">
+        <div class="article-card-tag">
+          <span class="ac-tag-label">Wayleave Basics</span>
+          <span class="ac-tag-date">May 2026</span>
+        </div>
+        <div class="article-card-body">
+          <h2>Municipal vs SANRAL vs Eskom Wayleave — What's the Difference and Who Do You Apply To?</h2>
+          <p>South Africa has no single wayleave authority. The relevant body depends entirely on whose land you're crossing — and getting it wrong wastes weeks. Here's how to work it out.</p>
+        </div>
+        <div class="article-card-footer">
+          <span class="ac-read-time">10 min read</span>
+          <a href="article-municipal-vs-sanral-vs-eskom-wayleave.html" class="ac-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CARD: How long does a wayleave take -->
+      <div class="article-card">
+        <div class="article-card-tag">
+          <span class="ac-tag-label">Planning</span>
+          <span class="ac-tag-date">May 2026</span>
+        </div>
+        <div class="article-card-body">
+          <h2>How Long Does a Wayleave Application Take in South Africa?</h2>
+          <p>Timelines vary significantly by authority — from 4 weeks for a simple municipal application to 5 months for an Eskom transmission crossing. Here's a realistic breakdown and what affects the clock.</p>
+        </div>
+        <div class="article-card-footer">
+          <span class="ac-read-time">4 min read</span>
+          <a href="article-how-long-does-a-wayleave-take.html" class="ac-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CARD: Wayleave checklist -->
+      <div class="article-card">
+        <div class="article-card-tag">
+          <span class="ac-tag-label">Reference</span>
+          <span class="ac-tag-date">May 2026</span>
+        </div>
+        <div class="article-card-body">
+          <h2>Wayleave Application Checklist: Documents Required for Infrastructure Projects in South Africa</h2>
+          <p>A practical checklist covering the core documents required for SANRAL, municipal, Eskom, Transnet, and private landowner applications. Bookmark this before your next submission.</p>
+        </div>
+        <div class="article-card-footer">
+          <span class="ac-read-time">5 min read</span>
+          <a href="article-wayleave-application-checklist.html" class="ac-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ADD NEW ARTICLE CARDS ABOVE THIS COMMENT -->
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 PermitFlow SA (Pty) Ltd. Reg No: 2026/352999/07. All rights reserved.</p>
+    <p style="margin-top:6px; font-size:0.75rem; color: rgba(255,255,255,0.4);">PermitFlow SA is an independent private consulting firm. Not affiliated with any government entity.</p>
+    <div class="footer-legal-links">
+      <a href="terms.html">Terms of Service</a>
+      <span>·</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <span>·</span>
+      <a href="articles.html">Articles</a>
+      <span>·</span>
+      <a href="index.html">Home</a>
+    </div>
+  </footer>
+
+</body>
+</html>
