@@ -76,6 +76,14 @@
     .footer-legal-links a:hover { text-decoration: underline; }
     .footer-legal-links span { color: rgba(255,255,255,0.3); }
   </style>
+  <!-- Google Ads Conversion Tracking — replace AW-XXXXXXXXX with your actual Conversion ID from Tools & Settings > Conversions -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18384530725"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18384530725');
+  </script>
 </head>
 <body>
 
@@ -354,7 +362,7 @@
           <div class="form-disclaimer">
             <strong>PermitFlow SA is a private B2B consulting agency, not a government entity.</strong> Our professional service fees cover application preparation and facilitation only — any direct authority or municipal fees are separate and payable directly to the relevant body.
           </div>
-          <form class="contact-form" action="https://formspree.io/f/xykoplrv" method="POST">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xykoplrv" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name</label>
@@ -392,9 +400,42 @@
               <label for="message">Project Description</label>
               <textarea id="message" name="message" rows="4" placeholder="Brief description of your project, location, and timeline..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Enquiry →</button>
-            <p class="form-note">We respond within 24 hours on business days.</p>
+            <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">Send Enquiry →</button>
+            <p class="form-note" id="contactFormNote">We respond within 24 hours on business days.</p>
           </form>
+          <script>
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+              e.preventDefault();
+              const form = e.target;
+              const btn = document.getElementById('contactSubmitBtn');
+              const note = document.getElementById('contactFormNote');
+              btn.disabled = true;
+              btn.textContent = 'Sending…';
+              fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+              }).then(function (response) {
+                if (response.ok) {
+                  // Fire Google Ads conversion — replace AW-XXXXXXXXX/XXXXXXXXXXX with your Conversion ID/Label
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'conversion', { 'send_to': 'AW-18384530725/REPLACE_WITH_LABEL' });
+                  }
+                  form.style.display = 'none';
+                  note.textContent = 'Thanks — your enquiry has been received. We\'ll respond within 24 hours on business days.';
+                  note.style.fontWeight = '600';
+                } else {
+                  btn.disabled = false;
+                  btn.textContent = 'Send Enquiry →';
+                  note.textContent = 'Something went wrong — please email zwelethu@permitflow.co.za directly.';
+                }
+              }).catch(function () {
+                btn.disabled = false;
+                btn.textContent = 'Send Enquiry →';
+                note.textContent = 'Something went wrong — please email zwelethu@permitflow.co.za directly.';
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
